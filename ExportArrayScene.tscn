@@ -22,10 +22,9 @@ eventHandlers = [NodePath("LinePresenterButtonHandler")]
 dialogueRunner = NodePath("../DialogueRunner")
 palette = ExtResource("4_palette")
 
-[node name="LinePresenterButtonHandler" type="Control" parent="LinePresenter" unique_id=1566981298 node_paths=PackedStringArray("continueButton", "dialogueRunner")]
+[node name="LinePresenterButtonHandler" type="Control" parent="LinePresenter" unique_id=1566981298 node_paths=PackedStringArray("dialogueRunner")]
 anchors_preset = 0
 script = ExtResource("2_handler")
-continueButton = NodePath("../PresenterControl/ContinueButton")
 dialogueRunner = NodePath("../../DialogueRunner")
 
 [node name="PresenterControl" type="Control" parent="LinePresenter" unique_id=187594960]
@@ -35,12 +34,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ContinueButton" type="Button" parent="LinePresenter/PresenterControl" unique_id=1272876934]
-layout_mode = 0
-offset_right = 160.0
-offset_bottom = 40.0
-text = "Continue"
 
 [node name="OptionsPresenter" type="Control" parent="." unique_id=1146906997 node_paths=PackedStringArray("dialogueRunner")]
 layout_mode = 3

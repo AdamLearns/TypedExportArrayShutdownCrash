@@ -5,8 +5,6 @@
 [ext_resource type="Script" uid="uid://budnld4qd513n" path="res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs" id="3_runner"]
 [ext_resource type="Resource" uid="uid://bhfbk73kwh81j" path="res://MarkupPalette.tres" id="4_palette"]
 [ext_resource type="Script" uid="uid://ba6k2ox6e4qg" path="res://addons/YarnSpinner-Godot/Runtime/Async/OptionsPresenter.cs" id="5_options"]
-[ext_resource type="Texture2D" uid="uid://bpb88y3d77luk" path="res://icon.svg" id="6_davy6"]
-[ext_resource type="Script" uid="uid://v2i2o0msxkf5" path="res://doesthismatter.gd" id="7_iuqwg"]
 
 [node name="ExportArrayScene" type="CanvasLayer" unique_id=2114944005]
 
@@ -49,8 +47,3 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("5_options")
 dialogueRunner = NodePath("../DialogueRunner")
-
-[node name="Icon" type="Sprite2D" parent="." unique_id=574586540]
-position = Vector2(286, 183)
-texture = ExtResource("6_davy6")
-script = ExtResource("7_iuqwg")

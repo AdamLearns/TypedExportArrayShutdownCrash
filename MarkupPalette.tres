@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="MarkupPalette" format=3 uid="uid://bhfbk73kwh81j"]
 
-[ext_resource type="Script" uid="uid://b0cy012uv8aom" path="res://addons/YarnSpinner-Godot/Runtime/BasicMarker.cs" id="1_basic"]
+[ext_resource type="Script" uid="uid://b3q2v7wyxccs0" path="res://addons/YarnSpinner-Godot/Runtime/BasicMarker.cs" id="1_basic"]
 [ext_resource type="Script" uid="uid://bs11sk3haw2uf" path="res://addons/YarnSpinner-Godot/Runtime/CustomMarker.cs" id="2_custom"]
-[ext_resource type="Script" uid="uid://cc15twdgvvqul" path="res://addons/YarnSpinner-Godot/Runtime/Views/MarkupPalette.cs" id="3_palette"]
+[ext_resource type="Script" uid="uid://dn5hil73gapip" path="res://addons/YarnSpinner-Godot/Runtime/Views/MarkupPalette.cs" id="3_palette"]
 
 [sub_resource type="Resource" id="Resource_basic"]
 script = ExtResource("1_basic")

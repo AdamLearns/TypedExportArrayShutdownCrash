@@ -6,8 +6,6 @@ using YarnSpinnerGodot;
 public partial class Main : Control
 {
     private const int SceneCount = 500;
-    private static readonly StringName AerialDashLeft = "aerial_dash_left";
-    private static readonly StringName AerialDashRight = "aerial_dash_right";
 
     private readonly List<Node> _reproScenes = [];
     private readonly List<DialogueRunner> _dialogueRunners = [];

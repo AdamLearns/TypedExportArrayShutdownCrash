@@ -10,9 +10,9 @@ Some other notes:
 
 - Despite that `addons/YarnSpinner-Godot` exists in this repo, it isn't actually the real addon; it's a recreation of any potentially significant causes.
 - I only tested this on macOS.
-- The crash rate is 38%.
-  - 30 of 100 runs crashed due to `handle_crash: Program crashed with signal 11`
-  - 8 of 100 runs crashed with `libc++abi: terminating due to uncaught exception of type std::__1::system_error: mutex lock failed: Invalid argument`
+- The crash rate is 63% (big caveat: see instructions about timing).
+  - 49 of 100 runs crashed due to `handle_crash: Program crashed with signal 11`
+  - 14 of 100 runs crashed with `libc++abi: terminating due to uncaught exception of type std::__1::system_error: mutex lock failed: Invalid argument`
 - I mentioned having a controller connected in the original issue, but for this repro, I didn't have it connected.
 
 ## Instructions

@@ -31,7 +31,7 @@ public partial class Main : Control
 
     private async Task QuitAfterDelay()
     {
-        double quitDelay = GD.RandRange(1.7, 1.8);
+        double quitDelay = GD.RandRange(1.72, 1.76);
         GD.Print("quitDelay: " + quitDelay);
         await ToSignal(GetTree().CreateTimer(quitDelay), SceneTreeTimer.SignalName.Timeout);
 

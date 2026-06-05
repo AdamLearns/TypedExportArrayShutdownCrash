@@ -17,9 +17,7 @@ Some other notes:
 
 ## Instructions
 
-Since this is almost certainly timing-related, I think the most important line of code to change is this one:
-
-`double quitDelay = GD.RandRange(1.48, 1.55);`
+Since this is almost certainly timing-related, I think the most important variable to change is `double quitDelay`.
 
 I ran several hundred times and noticed that the crashes most frequently occurred for me in this range. In fact, from the logs, here are the actual times that resulted in a SIGSEGV:
 
@@ -56,4 +54,9 @@ quitDelay: 1.5448659980924997
 quitDelay: 1.5476992543685815
 ```
 
-If this is even relevant, then it'll likely need to be tweaked for your machine.
+If `quitDelay` is even relevant, then it'll likely need to be tweaked for your machine.
+
+I ran via `zsh` with:
+
+- `touch log.txt`
+- `dotnet build && for i in {1..100}; do /Applications/Godot_mono.app/Contents/MacOS/Godot --path ./ >> ./log.txt 2>&1 ; done`

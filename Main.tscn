@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dpxmvnx38kmba"]
+
+[ext_resource type="Script" uid="uid://bgcanq1k54eim" path="res://Main.cs" id="1_main"]
+
+[node name="Main" type="Control" unique_id=1729771446]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main")
+
+[node name="SubGameNode" type="Node2D" parent="." unique_id=797400713]
+unique_name_in_owner = true

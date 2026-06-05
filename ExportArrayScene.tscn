@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bxejtq8d76b1r"]
+
+[ext_resource type="Script" uid="uid://b8nsxur6opm4k" path="res://addons/YarnSpinner-Godot/Runtime/Async/LinePresenter.cs" id="1_owner"]
+[ext_resource type="Script" uid="uid://cm822dsbyq7mj" path="res://addons/YarnSpinner-Godot/Runtime/Async/LinePresenterButtonHandler.cs" id="2_handler"]
+[ext_resource type="Script" uid="uid://budnld4qd513n" path="res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs" id="3_runner"]
+[ext_resource type="Resource" uid="uid://bhfbk73kwh81j" path="res://MarkupPalette.tres" id="4_palette"]
+[ext_resource type="Script" uid="uid://ba6k2ox6e4qg" path="res://addons/YarnSpinner-Godot/Runtime/Async/OptionsPresenter.cs" id="5_options"]
+[ext_resource type="Texture2D" uid="uid://bpb88y3d77luk" path="res://icon.svg" id="6_davy6"]
+[ext_resource type="Script" uid="uid://v2i2o0msxkf5" path="res://doesthismatter.gd" id="7_iuqwg"]
+
+[node name="ExportArrayScene" type="CanvasLayer" unique_id=2114944005]
+
+[node name="DialogueRunner" type="Control" parent="." unique_id=1792813282 node_paths=PackedStringArray("dialoguePresenters")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("3_runner")
+dialoguePresenters = [NodePath("../LinePresenter"), NodePath("../OptionsPresenter")]
+
+[node name="LinePresenter" type="Control" parent="." unique_id=823234056 node_paths=PackedStringArray("eventHandlers", "dialogueRunner")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_owner")
+eventHandlers = [NodePath("LinePresenterButtonHandler")]
+dialogueRunner = NodePath("../DialogueRunner")
+palette = ExtResource("4_palette")
+
+[node name="LinePresenterButtonHandler" type="Control" parent="LinePresenter" unique_id=1566981298 node_paths=PackedStringArray("continueButton", "dialogueRunner")]
+anchors_preset = 0
+script = ExtResource("2_handler")
+continueButton = NodePath("../PresenterControl/ContinueButton")
+dialogueRunner = NodePath("../../DialogueRunner")
+
+[node name="PresenterControl" type="Control" parent="LinePresenter" unique_id=187594960]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContinueButton" type="Button" parent="LinePresenter/PresenterControl" unique_id=1272876934]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 40.0
+text = "Continue"
+
+[node name="OptionsPresenter" type="Control" parent="." unique_id=1146906997 node_paths=PackedStringArray("dialogueRunner")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("5_options")
+dialogueRunner = NodePath("../DialogueRunner")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=574586540]
+position = Vector2(286, 183)
+texture = ExtResource("6_davy6")
+script = ExtResource("7_iuqwg")

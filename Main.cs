@@ -13,22 +13,6 @@ public partial class Main : Control
     private readonly List<DialogueRunner> _dialogueRunners = [];
     private Node2D _subGameNode = null!;
 
-    public override void _Input(InputEvent @event)
-    {
-        if (Input.IsActionJustPressedByEvent(AerialDashRight, @event))
-        {
-            GD.Print("aerial_dash_right pressed");
-        }
-        else if (Input.IsActionJustPressedByEvent(AerialDashLeft, @event))
-        {
-            GD.Print("aerial_dash_left pressed");
-        }
-        else
-        {
-            return;
-        }
-    }
-
     public override void _Ready()
     {
         _subGameNode = GetNode<Node2D>("%SubGameNode");

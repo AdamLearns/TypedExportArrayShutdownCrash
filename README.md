@@ -17,46 +17,11 @@ Some other notes:
 
 ## Instructions
 
-Since this is almost certainly timing-related, I think the most important variable to change is `double quitDelay`.
+Since this issue is almost certainly timing-related, the most important variable to change is `double quitDelay`. I have it tuned to a value that causes repros more frequently for _my_ machine. I suggest the following:
 
-I ran several hundred times and noticed that the crashes most frequently occurred for me in this range. In fact, from the logs, here are the actual times that resulted in a SIGSEGV:
-
-```
-quitDelay: 1.4868990778760565
-quitDelay: 1.4869652751285
-quitDelay: 1.4870048327491303
-quitDelay: 1.4878840186428908
-quitDelay: 1.5039623057874791
-quitDelay: 1.5069221775074755
-quitDelay: 1.5072125376637113
-quitDelay: 1.5103204772214358
-quitDelay: 1.5105583970131797
-quitDelay: 1.510658273075608
-quitDelay: 1.5113069414063487
-quitDelay: 1.5140373409576224
-quitDelay: 1.5142333570864677
-quitDelay: 1.5147974521230676
-quitDelay: 1.5170795480547523
-quitDelay: 1.5229245004311966
-quitDelay: 1.523970040859538
-quitDelay: 1.5282653225279472
-quitDelay: 1.5295813209816724
-quitDelay: 1.5305074143912136
-quitDelay: 1.5366538794772853
-quitDelay: 1.537196675736902
-quitDelay: 1.5379715814787498
-quitDelay: 1.5380244502366505
-quitDelay: 1.5395911016828172
-quitDelay: 1.540082195746863
-quitDelay: 1.5441533869076907
-quitDelay: 1.544238611730464
-quitDelay: 1.5448659980924997
-quitDelay: 1.5476992543685815
-```
-
-If `quitDelay` is even relevant, then it'll likely need to be tweaked for your machine.
-
-I ran via `zsh` with:
-
-- `touch log.txt`
-- `dotnet build && for i in {1..100}; do /Applications/Godot_mono.app/Contents/MacOS/Godot --path ./ >> ./log.txt 2>&1 ; done`
+- Start with `double quitDelay = GD.RandRange(1.0, 3.0)`
+- Run 100 times:
+  - `touch log.txt`
+  - `dotnet build && for i in {1..100}; do /Applications/Godot_mono.app/Contents/MacOS/Godot --path ./ >> ./log.txt 2>&1 ; done`
+- Analyze the log for crashes and see which `quitDelay` values tended to be used
+- Narrow the `GD.RandRange()` call based on those times, e.g. `double quitDelay = GD.RandRange(1.7, 1.8);`
